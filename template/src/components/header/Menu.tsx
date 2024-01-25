@@ -25,6 +25,22 @@ function Menu() {
         <NextLink href="/" passHref className="relative h-8 w-8">
           <div className={styles.MenuCircleImage} />
         </NextLink>
+
+        <NextLink
+          href="/"
+          passHref
+          className="font-robotoMono text-center text-xl font-medium text-white"
+        >
+          {MenuTitle}
+        </NextLink>
+      </div>
+
+      <div className="flex items-center justify-start">
+        <div className="hidden gap-6 md:flex">
+          {isMobileMenuOpen ? <NavbarMobile /> : <Navbar />}
+          <AccountConnect />
+        </div>
+
         <div className="flex justify-start md:hidden">
           <button
             type="button"
@@ -35,18 +51,6 @@ function Menu() {
             <HamburgerMenuIcon width="16" height="16" />
           </button>
         </div>
-        <NextLink
-          href="/"
-          passHref
-          className="font-robotoMono text-center text-xl font-medium text-white"
-        >
-          {MenuTitle}
-        </NextLink>
-      </div>
-
-      <div className="flex items-center justify-start gap-8">
-        {isMobileMenuOpen ? <NavbarMobile /> : <Navbar />}
-        <AccountConnect />
       </div>
     </>
   );
